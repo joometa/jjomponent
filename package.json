@@ -64,7 +64,9 @@
     "@storybook/react": "^6.5.15",
     "@storybook/testing-library": "^0.0.13",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "node-sass": "^8.0.0",
     "prop-types": "^15.8.1",
+    "sass-loader": "^13.2.0",
     "webpack": "^5.75.0"
   }
 }

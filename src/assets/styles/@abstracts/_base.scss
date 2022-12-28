@@ -1,0 +1,20 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+    appearance: none;
+    cursor: pointer;
+    border: 0px;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+
+a {
+  text-decoration: none;
+}

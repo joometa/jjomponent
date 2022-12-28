@@ -1,0 +1,337 @@
+.#{$glo}-buttons {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 19px;
+  vertical-align: middle;
+  border: 1px solid $color-primary;
+  border-radius: 6px;
+  background-color: $color-primary;
+  height: fit-content;
+  // @include transition(
+  //   border-color 0.3s $standard-easing,
+  //   background-color 0.3s $standard-easing
+  // );
+
+  > .icon {
+    display: block;
+    height: 16px;
+    width: 16px;
+
+    &.left {
+      margin-right: 6px;
+    }
+    &.right {
+      margin-left: 6px;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-height: 100%;
+      max-width: 100%;
+      fill: #fff;
+    }
+  }
+
+  > .txt {
+    display: block;
+    // @include font(14, 500, #fff, 16);
+    // @include transition(
+    //   color 0.3s $standard-easing,
+    //   background-color 0.3s $standard-easing
+    // );
+  }
+
+  // status
+  &.hover,
+  &:hover {
+    background-color: $color-primary-hover;
+  }
+
+  &.disabled,
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  &.dash,
+  &[data-dash='true'] {
+    border-style: dashed;
+  }
+
+  &.size-tiny,
+  &[data-size='tiny'] {
+    padding: 3px 11px;
+
+    > .txt {
+      // @include font-size(13, 16);
+    }
+  }
+
+  &.size-xs,
+  &[data-size='xs'] {
+    padding: 7px 15px;
+
+    > .txt {
+      // @include font-size(13, 16);
+    }
+  }
+
+  &.size-s,
+  &[data-size='s'] {
+    // default
+  }
+
+  &.size-m,
+  &[data-size='m'] {
+    padding: 15px 23px;
+  }
+
+  &.size-l,
+  &[data-size='l'] {
+    padding: 17px 31px;
+
+    > .icon {
+      height: 20px;
+      width: 20px;
+    }
+
+    > .txt {
+      // @include font-size(16, 20);
+    }
+  }
+
+  // theme : ghost
+  &[data-theme='ghost'] {
+    border-color: #c4c4ca;
+    background-color: #fff;
+
+    > .icon {
+      svg {
+        fill: #19191d;
+      }
+    }
+    > .txt {
+      color: #19191d;
+    }
+
+    &.hover,
+    &:hover {
+      border-color: #c4c4ca;
+      background-color: #f4f4f4;
+    }
+
+    &.disabled &:disabled {
+      opacity: 1;
+      border-color: #e1e1e5;
+      background-color: #f8f9fa;
+      > .icon {
+        svg {
+          fill: #c4c4ca;
+        }
+      }
+      > .txt {
+        color: #c4c4ca;
+      }
+    }
+  }
+
+  // theme : success
+  &[data-theme='success'] {
+    border-color: $color-success;
+    background-color: $color-success;
+
+    > .icon {
+      svg {
+        fill: #ffffff;
+      }
+    }
+    > .txt {
+      color: #ffffff;
+    }
+
+    &.hover,
+    &:hover {
+      background-color: #146c43;
+    }
+
+    &.disabled &:disabled {
+      opacity: 1;
+      border-color: rgba(255, 255, 255, 0.4);
+      background-color: rgba(25, 25, 29, 0.05);
+      > .icon {
+        svg {
+          fill: #c4c4ca;
+        }
+      }
+      > .txt {
+        color: #c4c4ca;
+      }
+    }
+  }
+
+  // theme : error
+  &[data-theme='error'] {
+    border-color: $color-error;
+    background-color: $color-error;
+
+    > .icon {
+      svg {
+        fill: #fff;
+      }
+    }
+    > .txt {
+      color: #fff;
+    }
+
+    &.hover,
+    &:hover {
+      background-color: $color-error-hover;
+    }
+  }
+
+  // theme: outline
+  &[data-theme='outline'] {
+    border-color: transparent;
+    background-color: transparent;
+
+    > .icon {
+      svg {
+        fill: #19191d;
+      }
+    }
+    > .txt {
+      color: #19191d;
+    }
+
+    &.hover,
+    &:hover {
+      > .icon {
+        svg {
+          fill: #3a3a44;
+        }
+      }
+      > .txt {
+        color: #3a3a44;
+      }
+    }
+
+    &.disabled,
+    &:disabled {
+      opacity: 1;
+      > .icon {
+        svg {
+          fill: #c4c4ca;
+        }
+      }
+      > .txt {
+        color: #c4c4ca;
+      }
+    }
+  }
+
+  // intent: text-b
+  &.intent-text-b,
+  &[data-intent='text-b'] {
+    border-color: transparent;
+    background-color: transparent;
+
+    > .icon {
+      svg {
+        fill: #9696a0;
+      }
+    }
+    > .txt {
+      color: #9696a0;
+    }
+
+    &.hover,
+    &:hover {
+      > .icon {
+        svg {
+          fill: #5a5b6a;
+        }
+      }
+      > .txt {
+        color: #5a5b6a;
+      }
+    }
+
+    &.disabled,
+    &:disabled {
+      opacity: 1;
+      > .icon {
+        svg {
+          fill: #c4c4ca;
+        }
+      }
+      > .txt {
+        color: #c4c4ca;
+      }
+    }
+  }
+
+  // intent: text-primary
+  // &.intent-text-primary,
+  // &[data-intent='text-primary'] {
+  //   border-color: transparent;
+  //   background-color: transparent;
+
+  //   > .icon {
+  //     svg {
+  //       fill: $primary;
+  //     }
+  //   }
+  //   > .txt {
+  //     color: $primary;
+  //   }
+
+  //   &.hover,
+  //   &:hover {
+  //     > .icon {
+  //       svg {
+  //         fill: #0038b4;
+  //       }
+  //     }
+  //     > .txt {
+  //       color: #0038b4;
+  //     }
+  //   }
+
+  //   &.disabled,
+  //   &:disabled {
+  //     opacity: 1;
+  //     > .icon {
+  //       svg {
+  //         fill: rgba(8, 73, 217, 0.4);
+  //       }
+  //     }
+  //     > .txt {
+  //       color: rgba(8, 73, 217, 0.4);
+  //     }
+  //   }
+  // }
+
+  // intent: destructive
+  &.intent-destructive,
+  &[data-intent='destructive'] {
+    border-color: #c51d25;
+    background-color: #c51d25;
+
+    > .icon {
+      svg {
+        fill: #fff;
+      }
+    }
+    > .txt {
+      color: #fff;
+    }
+
+    &.hover,
+    &:hover {
+      background-color: #b41d24;
+    }
+  }
+}

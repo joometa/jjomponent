@@ -1,0 +1,17 @@
+@use 'sass:math';
+
+/* z-index */
+$z-layers: (
+  'modal': 1000,
+  'modaless': 900,
+  'hover': 200,
+  'default': 1,
+  'bottomless-pit': -10000,
+);
+
+@function z($layer){
+  @if not map-has-key($map: $z-layers, $key: $layer){
+    @warn "No layer found for `#{$layer}` in $z-layers map. Property omitted.";
+  }
+  @return map-get($z-layers, $layer);
+}

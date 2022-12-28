@@ -1,13 +1,24 @@
 import React, { forwardRef } from 'react';
-import {GLO} from '../config'
-import {ButtonProps} from './types'
+import { GLO } from '../config';
+import { ButtonProps } from './types';
 
-function CButton (props:ButtonProps, ref:any){
-    const {className = '', theme='primary',size = 'xs', dash = false, href='',loading,leftIcon,rightIcon,children, ...otherProps} = props;
+function CButton(props: ButtonProps, ref: any) {
+  const {
+    className = '',
+    theme = 'primary',
+    size = 'xs',
+    dash = false,
+    href = '',
+    loading,
+    leftIcon,
+    rightIcon,
+    children,
+    ...otherProps
+  } = props;
 
-    return (
-        <>
-        {href ? (
+  return (
+    <>
+      {href ? (
         <a
           href={href}
           data-theme={theme}
@@ -34,8 +45,9 @@ function CButton (props:ButtonProps, ref:any){
           <span className="txt">{children}</span>
           {rightIcon && <i className="icon right">{rightIcon}</i>}
         </button>
-      )}</>
-    )
+      )}
+    </>
+  );
 }
 
 export const Button = forwardRef(CButton);
